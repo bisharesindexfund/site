@@ -39,7 +39,7 @@
                         <div class="navbar-nav ml-auto">
                             <a class="nav-item nav-links ts-scroll" href="./about-us.html">About <span class="sr-only"></span></a>
                             <a class="nav-item nav-links ts-scroll" href="./funds.html">Funds</a>
-                            <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto" href="#">App Coming Soon</a>
+                            <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto"  href="#" onclick="return false;">App Coming Soon</a>
                         </div>
                         <!--end navbar-nav-->
                     </div>
@@ -109,7 +109,7 @@
                             <div class="container">
                               <div id="second" class="row">
                             </div>
-                            <h4 class="mb-1 semi-header">More to be added</h4>
+                            <h4 class="mb-1 semi-header text-primary">More to be added</h4>
                             <br />
                             <br />
                             <h3>BISHARES DEX FUND</h3>
@@ -134,7 +134,7 @@
                                   </a>
                               </div>
                             </div>
-                            <h4 class="mb-1 semi-header">+18 others being audited will be onboarded</h4>
+                            <h4 class="mb-1 semi-header text-primary">+18 others being audited will be onboarded</h4>
                             <br />
                             <br />
                             <h3>BISHARES ELON FUND</h3>
@@ -247,7 +247,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString() }</span>
+                              <span>Price: $${entry.current_price}</span>${ entry.market_cap !== 0 ? '<span>Mcap: $'+ entry.market_cap.toLocaleString()+'</span>': ''}
                               <span id="f-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -272,7 +272,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
+                              <span>Price: $${entry.current_price}</span>  ${ entry.market_cap !== 0 ? '<span>Mcap: $'+ entry.market_cap.toLocaleString()+'</span>': ''}
                               <span id="s-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -297,7 +297,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
+                              <span>Price: $${entry.current_price}</span>   ${ entry.market_cap !== 0 ? '<span>Mcap: $'+ entry.market_cap.toLocaleString()+'</span>': ''}
                               <span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -346,7 +346,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
+                              <span>Price: $${entry.current_price}</span>   ${ entry.market_cap !== 0 ? '<span>Mcap: $'+ entry.market_cap.toLocaleString()+'</span>': ''}
                               <span id="fi-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fi-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
