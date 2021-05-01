@@ -131,6 +131,11 @@
                                   <span onclick="CopyToClipboard('f-stos-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                       <span class="custom-tooltiptext">Copy address to clipboard</span>
                                   </span>
+                                  <a href="https://bscscan.com/token/0x9eab0a93b0cd5d904493694f041bdcedb97b88c6" target="_blank">
+                                    <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                      <span class="custom-tooltiptext">Click to Open link</span>
+                                    </span>
+                                  </a>
                               </div>
                             </div>
                             <h4 class="mb-1 semi-header">+18 others being audited will be onboarded</h4>
@@ -251,6 +256,11 @@
                               <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
+                              <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
+                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                  <span class="custom-tooltiptext">Click to Open link</span>
+                                </span>
+                              </a>
                             </div>`;
                     $('#first').append(html)
                 });
@@ -271,6 +281,11 @@
                               <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
+                              <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
+                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                  <span class="custom-tooltiptext">Click to Open link</span>
+                                </span>
+                              </a>
                             </div>`;
                     $('#second').append(html)
                 });
@@ -291,6 +306,11 @@
                               <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
+                              <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
+                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                  <span class="custom-tooltiptext">Click to Open link</span>
+                                </span>
+                              </a>
                             </div>`;
                     $('#third').append(html)
                 });
@@ -307,10 +327,15 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
-                              <span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                              <span id="fo-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('fo-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
+                              <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
+                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                  <span class="custom-tooltiptext">Click to Open link</span>
+                                </span>
+                              </a>
                             </div>`;
                     $('#fourth').append(html)
                 });
@@ -327,10 +352,15 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
-                              <span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                              <span id="fi-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('fi-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
+                              <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
+                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                  <span class="custom-tooltiptext">Click to Open link</span>
+                                </span>
+                              </a>
                             </div>`;
                     $('#fifth').append(html)
                 });
@@ -342,7 +372,7 @@
         function getContractAddresses(id){
             switch(id) {
                 case "binancecoin":
-                    token = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
+                    token = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
                     break;
                 case "pancakeswap-token":
                     token = "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82";
