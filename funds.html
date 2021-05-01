@@ -168,7 +168,7 @@
                     <!--end ts-title-->
                     <a href="#" target="_blank"><i class="fab fa-discord"> </i></a>
                     <a href="#" target="_blank"><i class="fab fa-twitter"> </i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"> </i></a>
+                    <a href="https://github.com/bisharesllc/bishares.finance" target="_blank"><i class="fab fa-github"> </i></a>
                     <a href="https://t.me/bishares" target="_blank"><i class="fab fa-telegram"> </i></a>
                 </div>
             </section>
@@ -251,7 +251,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString() }</span>
                               <span id="f-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -276,7 +276,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
                               <span id="s-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -301,7 +301,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
                               <span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -326,7 +326,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
                               <span id="fo-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fo-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -346,12 +346,12 @@
         // fifth 
         $(document).ready(function(){
             $.ajax({
-            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binance-bitcoin%2Cenergo%2Cdogecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=mirrored-tesla%2Cbinance-bitcoin%2Cdogecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
                               <span id="fi-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fi-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -425,8 +425,8 @@
                 case "burger-swap":
                     token = "0xae9269f27437f0fcbc232d39ec814844a51d6b8f";
                     break;
-                case "energo":
-                    token = "0x03806ce5ef69bd9780edfb04c29da1f23db96294";
+                case "mirrored-tesla":
+                    token = "0xF215A127A196e3988C09d052e16BcFD365Cd7AA3";
                     break;
                 case "binance-bitcoin":
                     token = "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c";
