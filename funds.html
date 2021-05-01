@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     
     <link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.png"/>
 	<title>BiShares - Funds</title>
@@ -98,11 +99,41 @@
                     <div class="ts-title">
                         <center>
                             <h1 class="display-3 text-xs-center">Fact <span class="text-primary">Sheets</span> </h1>
-                            <ul>
-                                <li>BiShares NFT Index Fund </li>
-                                <li>BiShares Top 10 Binance Index Fund</li>
-                                <li>BiShares Elon Musk Index Fund</li>
-                            </ul>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <h3>BISHARES TOP TEN BSC FUND</h3>
+                            <div class="container">
+                              <div id="first" class="row">
+                            </div>
+                            <br />
+                            <br />
+                            <h3>BISHARES NFT FUND</h3>
+                            <div class="container">
+                              <div id="second" class="row">
+                            </div>
+                            <br />
+                            <br />
+                            <h3>BISHARES DEX FUND</h3>
+                            <div class="container">
+                              <div id="third" class="row">
+                            </div>
+                            <br />
+                            <br />
+                            <h3>BISHARES FOMO FUND</h3>
+                            <div class="container">
+                              <div id="forth" class="row">
+                            </div>
+                            <br />
+                            <br />
+                            <h3>BISHARES ELON FUND</h3>
+                            <div class="container">
+                              <div id="fifth" class="row">
+                            </div>
+                            <br />
+                            <br />
+                            <br />
 
                         </center>
                     </div>
@@ -169,6 +200,163 @@
 	<script src="assets/js/jquery.validate.min.js"></script>
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="assets/js/custom.js"></script>
+
+
+    <script type="text/javascript">
+        function CopyToClipboard(containerid) {
+            if (window.getSelection) {
+                if (window.getSelection().empty) { // Chrome
+                    window.getSelection().empty();
+                } else if (window.getSelection().removeAllRanges) { // Firefox
+                    window.getSelection().removeAllRanges();
+                }
+            } else if (document.selection) { // IE?
+                document.selection.empty();
+            }
+
+            if (document.selection) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(document.getElementById(containerid));
+                range.select().createTextRange();
+                document.execCommand("copy");
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById(containerid));
+                window.getSelection().addRange(range);
+                document.execCommand("copy");
+            }
+        }
+
+
+
+        // first 
+        $(document).ready(function(){
+            $.ajax({
+            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cpolymath-network%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+            success: function(result){
+                result.forEach(function(entry) {
+                    console.log(entry)
+                    html = `<div class="col-md-5 m-2">
+                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                              </span>
+                            </div>`;
+                    $('#first').append(html)
+                });
+            }});
+        });
+
+
+        // second 
+        $(document).ready(function(){
+            $.ajax({
+            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=portion%2Cvlad-finance%2Cdego-finance%2Cjuggernaut%2Crefinable&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+            success: function(result){
+                result.forEach(function(entry) {
+                    console.log(entry)
+                    html = `<div class="col-md-5 m-2">
+                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                              </span>
+                            </div>`;
+                    $('#second').append(html)
+                });
+            }});
+        });
+
+
+        // third 
+        $(document).ready(function(){
+            $.ajax({
+            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+            success: function(result){
+                result.forEach(function(entry) {
+                    console.log(entry)
+                    html = `<div class="col-md-5 m-2">
+                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
+                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
+                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                              </span>
+                            </div>`;
+                    $('#third').append(html)
+                });
+            }});
+        });
+
+
+
+        function getContractAddresses(id){
+            switch(id) {
+                case "binancecoin":
+                    token = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
+                    break;
+                case "pancakeswap-token":
+                    token = "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82";
+                    break;
+                case "venus":
+                    token = "0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63";
+                    break;
+                case "bakerytoken":
+                    token = "0xe02df9e3e622debdd69fb838bb799e3f168902c5";
+                    break;
+                case "polymath-network":
+                    token = "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec";
+                    break;
+                case "safepal":
+                    token = "0xd41fdb03ba84762dd66a0af1a6c8540ff1ba5dfb";
+                    break;
+                case "trust-wallet-token":
+                    token = "0x4b0f1812e5df2a09796481ff14017e6005508003";
+                    break;
+                case "refinable":
+                    token = "0x4e6415a5727ea08aae4580057187923aec331227";
+                    break;
+                case "pancake-bunny":
+                    token = "0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51";
+                    break;
+                case "beefy-finance":
+                    token = "0xca3f508b8e4dd382ee878a314789373d80a5190a";
+                    break;
+                case "dego-finance":
+                    token = "0x88ef27e69108b2633f8e1c184cc37940a075cc02";
+                    break;
+                case "juggernaut":
+                    token = "0x73374ea518de7addd4c2b624c0e8b113955ee041";
+                    break;
+                case "vlad-finance":
+                    token = "0x279d41f3f78fe5c1f0ba41ae963d6e545113c973";
+                    break;
+                case "portion":
+                    token = "0x6d0f5149c502faf215c89ab306ec3e50b15e2892";
+                    break;
+                case "1inch":
+                    token = "0x111111111117dc0aa78b770fa6a738034120c302";
+                    break;
+                case "dodo":
+                    token = "0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd";
+                    break;
+                case "reef-finance":
+                    token = "0xfe3e6a25e6b192a42a44ecddcd13796471735acf";
+                    break;
+                case "burger-swap":
+                    token = "0xae9269f27437f0fcbc232d39ec814844a51d6b8f";
+                    break;
+                default:
+                    token = "0x0000000000000000000000000000000000000000";
+                    break;
+            }
+            return token
+        }
+        
+    </script>
 
 
 </body>
