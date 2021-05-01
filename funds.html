@@ -239,8 +239,8 @@
                     html = `<div class="col-md-5 m-2">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
-                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                              <span id="f-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                             </div>`;
@@ -260,8 +260,8 @@
                     html = `<div class="col-md-5 m-2">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
-                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                              <span id="s-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                             </div>`;
@@ -281,8 +281,8 @@
                     html = `<div class="col-md-5 m-2">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap}</span>
-                              <span id="${entry.id}-address">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                              <span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                             </div>`;
