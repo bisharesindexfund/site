@@ -39,8 +39,7 @@
                         <div class="navbar-nav ml-auto">
                             <a class="nav-item nav-links ts-scroll" href="./about-us.html">About <span class="sr-only"></span></a>
                             <a class="nav-item nav-links ts-scroll" href="./funds.html">Funds</a>
-                            <a class="nav-item nav-links ts-scroll" href="#">Audit</a>
-                            <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto" href="#"><span style="text-decoration: line-through;">App</span>-Coming Soon</a>
+                            <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto" href="#">App Coming Soon</a>
                         </div>
                         <!--end navbar-nav-->
                     </div>
@@ -53,21 +52,18 @@
             <!--HERO CONTENT ****************************************************************************************-->
             <div class="container align-self-center align-items-center" style="padding-top: 160px;">
                 <div class="row">
-                    <div class="col-md-12"><center>
-                        <h1 data-animate="ts-fadeInUp">BSC BiShares funds<br />for everyone</h1>
-                        <div data-animate="ts-fadeInUp" data-delay=".1s">
-                            <p class="w-75 text-white mb-5 ts-opacity__90">each token holds all the underlaying assets</p>
-                        </div>
-                        <br />
-                        <a href="#" class="btn btn-primary btn-lg ts-scroll mr-4 m-2" data-animate="ts-fadeInUp" data-delay=".2s">
-                            Buy BINFT
-                            <i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
-                        </a>
-                        <a href="#" class="btn btn-primary btn-lg ts-scroll mr-4 m-2" data-animate="ts-fadeInUp" data-delay=".2s">
-                            DETAILS
-                            <i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
-                        </a>
-                         </center>
+                    <div class="col-md-12">
+                        <center>
+                            <h1 data-animate="ts-fadeInUp">BSC BiShares funds<br />for everyone</h1>
+                            <div data-animate="ts-fadeInUp" data-delay=".1s">
+                                <p class="w-75 text-white mb-5 ts-opacity__90">each token holds all the underlaying assets</p>
+                            </div>
+                            <br />
+<!--                             <a href="#" class="btn btn-primary btn-lg ts-scroll mr-4 m-2" data-animate="ts-fadeInUp" data-delay=".2s">
+                                Buy BINFT
+                                <i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
+                            </a> -->
+                        </center>
                     </div>
                         
                        
@@ -98,7 +94,7 @@
                 <div class="container">
                     <div class="ts-title">
                         <center>
-                            <h1 class="display-3 text-xs-center">Fact <span class="text-primary">Sheets</span> </h1>
+                            <h1 class="display-3 text-xs-center">FUND <span class="text-primary">LIST</span> </h1>
                             <br />
                             <br />
                             <br />
@@ -113,6 +109,7 @@
                             <div class="container">
                               <div id="second" class="row">
                             </div>
+                            <h4 class="mb-1 semi-header">More to be added</h4>
                             <br />
                             <br />
                             <h3>BISHARES DEX FUND</h3>
@@ -126,7 +123,6 @@
                               <div id="fourth" class="row">
                               <div class="col-md-6 mb-4">
                                   <h4 style="margin-bottom: 0px"><img src="assets/img/SAFESTOS.png" style="height: 30px;" /> SafeSTOS (STOS)</h4>
-                                  <span>Price: $0.00</span> <span>Mcap: $0</span>
                                   <span id="f-stos-address">0x9eab0a93b0cd5d904493694f041bdcedb97b88c6</span>
                                   <span onclick="CopyToClipboard('f-stos-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                       <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -243,7 +239,7 @@
 
 
 
-        // first 
+        // top ten 
         $(document).ready(function(){
             $.ajax({
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cpolymath-network%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -268,7 +264,7 @@
         });
 
 
-        // second 
+        // nft 
         $(document).ready(function(){
             $.ajax({
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=portion%2Cvlad-finance%2Cdego-finance%2Cjuggernaut%2Crefinable&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -293,7 +289,7 @@
         });
 
 
-        // third 
+        // dex 
         $(document).ready(function(){
             $.ajax({
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -318,7 +314,7 @@
         });
 
 
-        // fourth 
+        // fomo 
         $(document).ready(function(){
             $.ajax({
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=safemoon&order=market_cap_desc&per_page=100&page=1&sparkline=false",
@@ -326,7 +322,6 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: $${entry.current_price}</span> <span>Mcap: $${entry.market_cap.toLocaleString()}</span>
                               <span id="fo-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fo-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
@@ -343,7 +338,7 @@
         });
 
 
-        // fifth 
+        // elon 
         $(document).ready(function(){
             $.ajax({
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=mirrored-tesla%2Cbinance-bitcoin%2Cdogecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false",
