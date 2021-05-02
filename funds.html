@@ -121,7 +121,7 @@
                               <div id="fourth" class="row">
                               <div class="col-md-6 mb-4">
                                   <h4 style="margin-bottom: 0px"><img src="assets/img/SAFESTOS.png" style="height: 30px;" /> SafeSTOS (STOS)</h4>
-                                  <p><span id="f-stos-address">0x9eab0a93b0cd5d904493694f041bdcedb97b88c6</span>
+                                  <p><span id="f-stos-address" style="font-size:11px;">0x9eab0a93b0cd5d904493694f041bdcedb97b88c6</span>
                                   <span onclick="CopyToClipboard('f-stos-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                       <span class="custom-tooltiptext">Copy address to clipboard</span>
                                   </span>
@@ -246,7 +246,7 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: <b>$${entry.current_price}</b></span>${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="f-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <p><span id="f-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
@@ -272,7 +272,7 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: <b>$${entry.current_price}</b></span>  ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="s-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <p><span id="s-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
@@ -297,7 +297,7 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: <b>$${entry.current_price}</b></span>   ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="t-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <p><span id="t-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
@@ -321,7 +321,7 @@
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <p><span id="fo-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <p><span id="fo-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fo-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
@@ -346,7 +346,7 @@
                     html = `<div class="col-md-6 mb-4">
                               <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
                               <span>Price: <b>$${entry.current_price}</b></span>   ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="fi-${entry.id}-address">${ getContractAddresses(entry.id) }</span>
+                              <p><span id="fi-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('fi-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
                                   <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
