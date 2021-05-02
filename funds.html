@@ -240,7 +240,7 @@
         // top ten 
         $(document).ready(function(){
             $.ajax({
-            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cpolymath-network%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+            url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cauto%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
                     html = `<div class="col-md-6 mb-4">
@@ -377,8 +377,8 @@
                 case "bakerytoken":
                     token = "0xe02df9e3e622debdd69fb838bb799e3f168902c5";
                     break;
-                case "polymath-network":
-                    token = "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec";
+                case "auto":
+                    token = "0xa184088a740c695e156f91f5cc086a06bb78b827";
                     break;
                 case "safepal":
                     token = "0xd41fdb03ba84762dd66a0af1a6c8540ff1ba5dfb";
@@ -396,25 +396,25 @@
                     token = "0xca3f508b8e4dd382ee878a314789373d80a5190a";
                     break;
                 case "dego-finance":
-                    token = "0x88ef27e69108b2633f8e1c184cc37940a075cc02";
+                    token = "0x3fda9383a84c05ec8f7630fe10adf1fac13241cc";
                     break;
                 case "juggernaut":
-                    token = "0x73374ea518de7addd4c2b624c0e8b113955ee041";
+                    token = "0xc13b7a43223bb9bf4b69bd68ab20ca1b79d81c75";
                     break;
                 case "vlad-finance":
                     token = "0x279d41f3f78fe5c1f0ba41ae963d6e545113c973";
                     break;
                 case "portion":
-                    token = "0x6d0f5149c502faf215c89ab306ec3e50b15e2892";
+                    token = "0xaf00aac2431b04ef6afd904d19b08d5146e3a9a0";
                     break;
                 case "1inch":
                     token = "0x111111111117dc0aa78b770fa6a738034120c302";
                     break;
                 case "dodo":
-                    token = "0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd";
+                    token = "0x67ee3cb086f8a16f34bee3ca72fad36f7db929e2";
                     break;
                 case "reef-finance":
-                    token = "0xfe3e6a25e6b192a42a44ecddcd13796471735acf";
+                    token = "0xf21768ccbc73ea5b6fd3c687208a7c2def2d966e";
                     break;
                 case "burger-swap":
                     token = "0xae9269f27437f0fcbc232d39ec814844a51d6b8f";
