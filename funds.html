@@ -103,6 +103,7 @@
                             <br />
                             <div class="container">
                               <div id="first" class="row">
+                              </div>
                             </div>
                             <br />
                             <br />
@@ -128,18 +129,25 @@
                             <br />
                             <div class="container">
                               <div id="fourth" class="row">
-                              <div class="col-md-6 mb-4">
-                                  <h4 style="margin-bottom: 0px"><img src="assets/img/SAFESTOS.png" style="height: 30px;" /> SafeSTOS (STOS)</h4>
-                                  <p><span id="f-stos-address" style="font-size:11px;">0x9eab0a93b0cd5d904493694f041bdcedb97b88c6</span>
-                                  <span onclick="CopyToClipboard('f-stos-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                      <span class="custom-tooltiptext">Copy address to clipboard</span>
+                              <div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="assets/img/SAFESTOS.png" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">SafeSTOS - STOS</h4>
+                              <p><span id="f-stos-address" style="font-size:12px;">0x9eab0a93b0cd5d904493694f041bdcedb97b88c6</span>
+                              <span onclick="CopyToClipboard('f-stos-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
+                              </span>
+                              <a href="https://bscscan.com/token/0x9eab0a93b0cd5d904493694f041bdcedb97b88c6" target="_blank">
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
                                   </span>
-                                  <a href="https://bscscan.com/token/0x9eab0a93b0cd5d904493694f041bdcedb97b88c6" target="_blank">
-                                    <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                      <span class="custom-tooltiptext">Click to Open link</span>
-                                    </span>
-                                  </a></p>
+                              </a></p>
                               </div>
+                            </div>
+                            </div>
                             </div>
                             <h4 class="mb-1 semi-header text-primary">+18 others being audited will be onboarded</h4>
                             <br />
@@ -252,19 +260,24 @@
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cauto%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
-                    html = `<div class="col-md-6 mb-4">
-                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: <b>$${entry.current_price}</b></span>${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="f-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
+                    html = `<div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="${entry.image}" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                              <p style="margin-bottom: 0px;color: rgba(0,0,0,0.7);">${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}</p>
+                              <p><span id="f-${entry.id}-address" style="font-size:12px;">${ getContractAddresses(entry.id) }</span>
                               <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                               <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
-                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                  <span class="custom-tooltiptext">Click to Open link</span>
-                                </span>
-                              </a>
-                              </p>
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
+                                  </span>
+                              </a></p>
+                            </div>
                             </div>`;
                     $('#first').append(html)
                 });
@@ -278,18 +291,24 @@
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=portion%2Cvlad-finance%2Cdego-finance%2Cjuggernaut%2Crefinable&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
-                    html = `<div class="col-md-6 mb-4">
-                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: <b>$${entry.current_price}</b></span>  ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="s-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('s-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                    html = `<div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="${entry.image}" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                              <p style="margin-bottom: 0px;color: rgba(0,0,0,0.7);">${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}</p>
+                              <p><span id="f-${entry.id}-address" style="font-size:12px;">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                               <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
-                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                  <span class="custom-tooltiptext">Click to Open link</span>
-                                </span>
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
+                                  </span>
                               </a></p>
+                            </div>
                             </div>`;
                     $('#second').append(html)
                 });
@@ -303,18 +322,24 @@
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
-                    html = `<div class="col-md-6 mb-4">
-                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: <b>$${entry.current_price}</b></span>   ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="t-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('t-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                    html = `<div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="${entry.image}" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                              <p style="margin-bottom: 0px;color: rgba(0,0,0,0.7);">${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}</p>
+                              <p><span id="f-${entry.id}-address" style="font-size:12px;">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                               <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
-                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                  <span class="custom-tooltiptext">Click to Open link</span>
-                                </span>
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
+                                  </span>
                               </a></p>
+                            </div>
                             </div>`;
                     $('#third').append(html)
                 });
@@ -328,17 +353,23 @@
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=safemoon&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
-                    html = `<div class="col-md-6 mb-4">
-                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <p><span id="fo-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('fo-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                    html = `<div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="${entry.image}" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                              <p><span id="f-${entry.id}-address" style="font-size:12px;">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                               <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
-                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                  <span class="custom-tooltiptext">Click to Open link</span>
-                                </span>
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
+                                  </span>
                               </a></p>
+                            </div>
                             </div>`;
                     $('#fourth').append(html)
                 });
@@ -352,18 +383,24 @@
             url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=mirrored-tesla%2Cbinance-bitcoin%2Cdogecoin&order=market_cap_desc&per_page=100&page=1&sparkline=false",
             success: function(result){
                 result.forEach(function(entry) {
-                    html = `<div class="col-md-6 mb-4">
-                              <h4 style="margin-bottom: 0px"><img src="${entry.image}" style="height: 30px;" /> ${entry.name} (${entry.symbol.toUpperCase()})</h4>
-                              <span>Price: <b>$${entry.current_price}</b></span>   ${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}
-                              <p><span id="fi-${entry.id}-address" style="font-size:11px;">${ getContractAddresses(entry.id) }</span>
-                              <span onclick="CopyToClipboard('fi-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
-                                  <span class="custom-tooltiptext">Copy address to clipboard</span>
+                    html = `<div class="col-md-6" style="padding: 0px;margin-bottom: 30px;">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                <img src="${entry.image}" style="height: 70px;" />
+                            </div>
+                            <div class="col-md-9 fund-list-element">
+                              <h4 style="margin-bottom: 0px">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                              <p style="margin-bottom: 0px;color: rgba(0,0,0,0.7);">${ entry.market_cap !== 0 ? '<span> Mcap: <b>$'+ entry.market_cap.toLocaleString()+'</span></b>': ''}</p>
+                              <p><span id="f-${entry.id}-address" style="font-size:12px;">${ getContractAddresses(entry.id) }</span>
+                              <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                <span class="custom-tooltiptext">Copy address to clipboard</span>
                               </span>
                               <a href="https://bscscan.com/token/${ getContractAddresses(entry.id) }" target="_blank">
-                                <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
-                                  <span class="custom-tooltiptext">Click to Open link</span>
-                                </span>
+                                  <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                    <span class="custom-tooltiptext">Click to Open link</span>
+                                  </span>
                               </a></p>
+                            </div>
                             </div>`;
                     $('#fifth').append(html)
                 });

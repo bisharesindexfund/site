@@ -33,3 +33,17 @@
 .custom-tooltip:hover .custom-tooltiptext {
   visibility: visible;
 }
+
+.fund-list-element {
+  text-align: left; 
+  padding: 0px;
+}
+
+@media (max-width: 768px) {
+  .fund-list-element {
+    text-align: center; 
+  }
+
+}
+
+
