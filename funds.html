@@ -299,7 +299,7 @@
         // top ten
         $(document).ready(function () {
             $.ajax({
-                url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Cauto%2Csafepal%2Cpancake-bunny&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+                url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Cmdex%2Calpaca-finance%2Capeswap-finance%2Cvenus%2Crefinable%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Csafepal%2Cbismuth&order=market_cap_desc&per_page=100&page=1&sparkline=false",
                 success: function (result) {
                     result.forEach(function (entry) {
                         html = `<div class="col-md-6">
@@ -544,6 +544,19 @@
                     break;
                 case "alife":
                     token = "0x42bA7BbDDEcb471c1e1Fe08636918952b6C19019";
+                    break;
+                case "bismuth":
+                    token = "0x56672ecb506301b1e32ed28552797037c54d36a9";
+                    break;
+                case "alpaca-finance":
+                    token = "0x8f0528ce5ef7b51152a59745befdd91d97091d2f";
+                    break;
+                case "apeswap-finance":
+                    token = "0x603c7f932ed1fc6575303d8fb018fdcbb0f39a95";
+                    break;
+                case "mdex":
+                    token = "0x9c65ab58d8d978db963e63f2bfb7121627e3a739";
+                    break;
                 default:
                     token = "0x0000000000000000000000000000000000000000";
                     break;
