@@ -243,8 +243,11 @@
                 type: "GET",
                 url: "https://api.vlad.finance/bishares-price.php?key=6547643&pool=0xec1214ee197304c17eb9e427e246a4fd37ba718e&token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&decimals=8",
                 success: function (data) {
-                    $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + JSON.parse(data)['data']);
-                    setTimeout(function () { get_bison_price(); }, 10000);
+                    bison = JSON.parse(data)['data'];
+                    if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+                        $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + bison);
+                        setTimeout(function () { get_bison_price(); }, 10000);
+                    }
                 }
             })
 
