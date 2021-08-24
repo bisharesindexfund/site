@@ -418,7 +418,7 @@
         // dex
         $(document).ready(function () {
             $.ajax({
-                url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+                url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2Capeswap-finance%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
                 success: function (result) {
                     result.forEach(function (entry) {
                         html = `<div class="col-md-6">
