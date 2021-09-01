@@ -249,6 +249,19 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <!-- BIShares Chain Fund :: starts here -->
+                            <br />
+                            <h1>BISHARES CHAIN FUND</h1>
+                            <div class="container">
+                                <div id="sixth" class="row">
+                                    <!-- Appended dynamically here through ajax -->
+                                </div>
+                            </div>
+                            <!-- BIShares Chain Fund :: ends here -->
+
+
                         </center>
                     </div>
                 </div>
@@ -520,6 +533,41 @@
         });
 
 
+        // Chain
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cbinance-usd%2Cbitcoin-bep2%2Cavalanche-2%2Cmatic-network%2Ccardano%2Cfantom%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+                success: function (result) {
+                    result.forEach(function (entry) {
+                        html = `<div class="col-md-6">
+                              <div class="fund-list-card">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3 mt-15">
+                                        <img src="${entry.image}" style="height: 70px;" />
+                                    </div>
+                                    <div class="col-md-9 fund-list-element mt-15">
+                                      <h4 class="mb-0">${entry.name} (${entry.symbol.toUpperCase()}) - $${entry.current_price}</h4>
+                                      <p class="mb-0" style="color: rgba(0,0,0,0.7);">${entry.market_cap !== 0 ? '<span> Mcap: <b>$' + entry.market_cap.toLocaleString() + '</span></b>' : ''}</p>
+                                      <p class="mb-0"><span id="f-${entry.id}-address" class="fund-list-address">${getContractAddresses(entry.id)}</span>
+                                      <span onclick="CopyToClipboard('f-${entry.id}-address')" class="btn-icon__inner far fa-copy custom-tooltip">
+                                        <span class="custom-tooltiptext">Copy address to clipboard</span>
+                                      </span>
+                                      <a href="https://bscscan.com/token/${getContractAddresses(entry.id)}" target="_blank">
+                                          <span class="btn-icon__inner fa fa-external-link-square-alt custom-tooltip">
+                                            <span class="custom-tooltiptext">Click to Open link</span>
+                                          </span>
+                                      </a></p>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>`;
+                        $('#sixth').append(html)
+                    });
+                }
+            });
+        });
+
+
 
         function getContractAddresses(id) {
             switch (id) {
@@ -634,6 +682,33 @@
                 case "hifi":
                     token = "0x0A38bc18022b0cCB043F7b730B354d554C6230F1";
                     break;
+
+
+                /* For BiShares Chain Funds :: starts here  */
+                case "ethereum":
+                    token = "0x2170Ed0880ac9A755fd29B2688956BD959F933F8";
+                    break;
+                case "cardano":
+                    token = "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47";
+                    break;
+                case "binance-usd":
+                    token = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
+                    break;
+                case "fantom":
+                    token = "0xAD29AbB318791D579433D831ed122aFeAf29dcfe";
+                    break;
+                case "bitcoin-bep2":
+                    token = "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c";
+                    break;
+                case "matic-network":
+                    token = "0xCC42724C6683B7E57334c4E856f4c9965ED682bD";
+                    break;
+                case "avalanche-2":
+                    token = "0x1CE0c2827e2eF14D5C4f29a091d735A204794041";
+                    break;
+                /* For BiShares Chain Funds :: ends here  */
+
+                    
                 default:
                     token = "0x0000000000000000000000000000000000000000";
                     break;
