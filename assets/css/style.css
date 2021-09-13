@@ -1864,7 +1864,37 @@ body.has-loading-screen.loading-done:after {
 #ts-hero .ts-background-image {
     background-position: top center;
 }
-
+/*-------------------------------------------
+  -- Header Audio
+-------------------------------------------*/
+.audio-wrap{
+    width:100%;
+    z-index: 1032;
+    position:fixed;
+    padding: 0.3rem;
+    color: #000;
+    background: #fbf9f5;
+    border-bottom: 1px solid rgba(218, 161, 14, 2%);
+}
+.audio-inner{
+    display: flex;
+    align-items: center;
+    float: right;
+}
+.audio-inner span{
+    margin-right:0.5rem;
+    font-size: 12px;
+}
+.audio-wrap audio{
+    height: 16px;
+    width: 250px;
+    margin-right:0.5rem;
+}
+.audio-inner audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel{
+    background-color: #daa10e;
+    color: #000;
+}
 /*-------------------------------------------
   -- Navbar
 -------------------------------------------*/
@@ -1880,7 +1910,8 @@ body.has-loading-screen.loading-done:after {
 
 .navbar.in {
     padding-bottom: 1rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
+    padding-top: 1.5rem;
     
 }
 
@@ -2548,6 +2579,9 @@ E. Template Specific Elements
     .ts-promo-numbers h2 {
         font-size: 2.375rem;
     }
+    .audio-inner{
+        float: none;
+    }
 }
 
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
@@ -2722,6 +2756,7 @@ E. Template Specific Elements
     .ts-promo-numbers h2 {
         font-size: 2.25rem;
     }
+    .fixed-top{top:13px;}
 }
 
 @media (min-width: 36rem) and (max-width: 61.9375rem) {
