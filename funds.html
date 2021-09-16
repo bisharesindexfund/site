@@ -165,7 +165,7 @@
                                 <div id="third" class="row"></div>
                             </div>
                             <br />
-                            
+
                             <h4 class="mb-1 semi-header text-primary">+12 others being audited will be onboarded</h4>
                             <br />
                             <h1 class="m-title"><i><img src="assets/img/biAPE.svg" alt="biAPE"></i>BISHARES APE FUND</h1>
@@ -359,6 +359,7 @@
 
         // dex
         $(document).ready(function () {
+            // Old Url: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2Capeswap-finance%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false
             $.ajax({
                 url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=pancakeswap%2Capeswap-finance%2C1inch%2Cbakerytoken%2Cdodo%2CvSWAP%2Creef-finance%2Cburger-swap&order=market_cap_desc&per_page=100&page=1&sparkline=false",
                 success: function (result) {
@@ -660,6 +661,18 @@
                     token = "0x3fcca8648651e5b974dd6d3e50f61567779772a8";
                     break;
                 /* For BiShares Game Funds :: ends here  */
+
+                /* For BiShares Dex Funds :: starts here  */
+                case "nerve-finance":
+                    token = "0x42F6f551ae042cBe50C739158b4f0CAC0Edb9096";
+                    break;
+                case "belt":
+                    token = "0xE0e514c71282b6f4e823703a39374Cf58dc3eA4f";
+                    break;
+                case "wault-usd":
+                    token = "0x3ff997eaea488a082fb7efc8e6b9951990d0c3ab";
+                    break;
+                /* For BiShares Dex Funds :: ends here  */
 
 
                 default:
