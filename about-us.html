@@ -241,14 +241,14 @@
         function get_bison_price() {
             $.ajax({
                 type: "GET",
-                url: "https://api.coingecko.com/api/v3/simple/price?ids=bishares&vs_currencies=usd",
+                url: "https://api.pancakeswap.info/api/v2/tokens/0x19A6Da6e382b85F827088092a3DBe864d9cCba73",
                 success: function (data) {
-                    bison = data["bishares"]["usd"];
+                    bison = data["data"]["price"];
                     if (bison == "0.00" || bison == "nan" || bison == "inf") {
                         setTimeout(function () { get_bison_price(); }, 1000);
                     } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
                       console.log(bison);
-                        $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + bison);
+                        $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + parseFloat(bison).toFixed(2));
                         setTimeout(function () { get_bison_price(); }, 30000);
                     }
                 }
