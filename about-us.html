@@ -76,7 +76,7 @@
                                 <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto"
                                 href="https://arbex.bishares.finance" target="_blank">ArbEX</a>
                             <a class="ts-scroll btn btn-primary btn-sm m-1 px-3 ts-width__auto"
-                                href="https://www.coingecko.com/en/coins/bishares"
+                                href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73"
                                 id="bison_price" target="_blank"><img src="assets/img/CoinSoloGold.svg"
                                     style="height: 20px;" /> $0.00</a>
                         </div>
@@ -320,14 +320,14 @@
         function get_bison_price() {
             $.ajax({
                 type: "GET",
-                url: "https://api.coingecko.com/api/v3/simple/price?ids=bishares&vs_currencies=usd",
+                url: "https://api.pancakeswap.info/api/v2/tokens/0x19A6Da6e382b85F827088092a3DBe864d9cCba73",
                 success: function (data) {
-                    bison = data["bishares"]["usd"];
+                    bison = data["data"]["price"];
                     if (bison == "0.00" || bison == "nan" || bison == "inf") {
                         setTimeout(function () { get_bison_price(); }, 1000);
                     } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
                       console.log(bison);
-                        $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + bison);
+                        $('#bison_price').html("<img src='assets/img/CoinSoloGold.svg' style='height: 20px;' /> $" + parseFloat(bison).toFixed(2));
                         setTimeout(function () { get_bison_price(); }, 30000);
                     }
                 }
