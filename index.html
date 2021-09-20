@@ -261,7 +261,7 @@
         function get_bison_price() {
             $.ajax({
                 type: "GET",
-                url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,ApeSwap,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+                url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
                 success: function (data) {
                     bison = data["price"];
                     if (bison == "0.00" || bison == "nan" || bison == "inf") {
